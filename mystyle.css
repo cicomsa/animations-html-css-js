@@ -1,0 +1,39 @@
+.mainDiv {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: blanchedalmond;
+}
+
+.mainDiv[data-status='close'] {
+  top: -50%;
+  overflow: hidden;
+  animation-name: back;
+  transition: all 0.6s linear;
+  z-index: -100;
+}
+
+.mainDiv[data-status='open'] {
+  animation-name: example;
+  animation-duration: 1s;
+  overflow: 1;
+  top: 50px;
+  transition: all 0.7s linear;
+  z-index: 0;
+}
+
+.wrap-toggle {
+  background-color: chartreuse;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.toggle {
+  display: inline;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-bottom: 33px;
+}
