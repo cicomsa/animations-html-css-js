@@ -3,19 +3,17 @@
   left: 0;
   right: 0;
   background-color: blanchedalmond;
+  display: flex;
 }
 
 .mainDiv[data-status='close'] {
   top: -50%;
   overflow: hidden;
-  animation-name: back;
   transition: all 0.6s linear;
   z-index: -100;
 }
 
 .mainDiv[data-status='open'] {
-  animation-name: example;
-  animation-duration: 1s;
   overflow: 1;
   top: 50px;
   transition: all 0.7s linear;
@@ -27,13 +25,49 @@
   height: 50px;
   position: absolute;
   top: 0;
-  right: 0;
   left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggle {
   display: inline;
   margin-block-start: 0;
   margin-block-end: 0;
-  padding-bottom: 33px;
+  padding: 16px 10px;
+}
+
+.div-1,
+.div-2 {
+  width: 50%;
+}
+
+.div-1 {
+  background-color: brown;
+  display: flex;
+  justify-content: space-around;
+}
+
+.div-2 {
+  background-color: seagreen;
+  padding-left: 10px;
+}
+
+.div-3 {
+  position: absolute;
+  left: 49%;
+  background-color: yellow;
+  height: 100%;
+}
+
+.div-3[data-status='in'] {
+  right: 0%;
+}
+
+.div-3[data-status='away'] {
+  right: 51%;
+  left: 49%;
+  transition: all 1.2s linear;
 }
