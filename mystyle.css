@@ -9,14 +9,14 @@
 .mainDiv[data-status='close'] {
   top: -50%;
   overflow: hidden;
-  transition: all 0.6s linear;
+  transition: all 1.5s linear;
   z-index: -100;
 }
 
 .mainDiv[data-status='open'] {
   overflow: 1;
   top: 50px;
-  transition: all 0.7s linear;
+  transition: all 1s linear;
   z-index: 0;
 }
 
@@ -37,10 +37,13 @@
   margin-block-start: 0;
   margin-block-end: 0;
   padding: 16px 10px;
+  cursor: pointer;
 }
 
 .div-1,
-.div-2 {
+.div-2,
+.div-4-content-1 > div,
+.div-4-content-2 > div {
   width: 50%;
 }
 
@@ -51,8 +54,9 @@
 }
 
 .div-2 {
-  background-color: seagreen;
-  padding-left: 10px;
+  background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05cc20d5b0bde7ae0d12f916c11aa18e&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .div-3 {
@@ -64,10 +68,59 @@
 
 .div-3[data-status='in'] {
   right: 0%;
+  transition: all 0.7s linear;
+  z-index: 2;
 }
 
 .div-3[data-status='away'] {
   right: 51%;
   left: 49%;
   transition: all 1.2s linear;
+}
+
+.div-4-content-1,
+.div-4-content-2 {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.div-4[data-status='hide'] {
+  display: none;
+}
+
+.div-4[data-status='display'] {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  background-color: rosybrown;
+  height: 100%;
+}
+
+.div-4-content-1 > div img,
+.div-4-content-2 > div img {
+  width: 100%;
+  height: 100%;
+}
+
+.div-4-content-1[data-status='to-replace'],
+.div-4-content-2[data-status='to-replace'] {
+  position: absolute;
+  left: 100%;
+}
+
+.div-4-content-1[data-status='replaced'],
+.div-4-content-2[data-status='replaced'] {
+  position: absolute;
+  left: 0;
 }
